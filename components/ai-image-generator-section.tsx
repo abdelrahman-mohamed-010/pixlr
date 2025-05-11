@@ -22,7 +22,7 @@ export default function AIImageGeneratorSection() {
         </p>
         <Link
           href="#"
-          className="inline-block bg-[#5463bf] hover:bg-[#5463bf] text-white font-medium py-2 px-6 rounded-full transition-colors transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+          className="inline-block bg-[#5463bf] hover:bg-[#5463bf] text-white font-medium py-2 px-6 rounded-full transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
         >
           Test Image Generator
         </Link>
