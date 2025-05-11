@@ -2,6 +2,12 @@ import Hero from "@/components/hero";
 import Navigation from "@/components/navigation";
 import QuickLinks from "@/components/quick-links";
 import BackgroundRemover from "@/components/background-remover";
+import PhotoEditing from "@/components/PhotoEditing";
+import MobileApp from "@/components/mobile-app";
+import TestimonialSection from "@/components/testimonial-section";
+import Questions from "@/components/questions";
+import Footer from "@/components/footer";
+import Faq from "@/components/Faq";
 
 export default function Home() {
   return (
@@ -16,6 +22,12 @@ export default function Home() {
       </div>
       <QuickLinks />
       <BackgroundRemover />
+      <PhotoEditing />
+      <MobileApp />
+      <TestimonialSection />
+      <Questions />
+      <Faq />
+      <Footer />
     </div>
   );
 }

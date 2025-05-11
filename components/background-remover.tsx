@@ -22,8 +22,8 @@ const generativeSections = [
       "Remove unwanted objects from your photos with a single click. Our AI technology seamlessly fills the space, maintaining the natural look of your image.",
     buttonText: "Try Object Removal",
     badgeText: "AI Removal",
-    imageLeft: "https://images.unsplash.com/photo-1545239351-ef35f43d514b",
-    imageRight: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+    imageLeft: "./photo1.jpeg",
+    imageRight: "./photo2.jpeg",
     altLeft: "Photo with unwanted objects",
     altRight: "Clean photo after object removal",
     promptText: "Remove objects",
@@ -35,8 +35,8 @@ const generativeSections = [
       "Transform your photos with artistic styles from famous paintings or custom designs. Our AI understands the essence of both your image and the style for stunning results.",
     buttonText: "Explore Style Transfer",
     badgeText: "AI Style",
-    imageLeft: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3",
-    imageRight: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968",
+    imageLeft: "./photo3.jpeg",
+    imageRight: "./photo4.jpeg",
     altLeft: "Original portrait photo",
     altRight: "Stylized portrait with artistic effect",
     promptText: "Apply artistic style",
@@ -48,8 +48,8 @@ const generativeSections = [
       "Instantly transport your subjects to new locations or abstract backgrounds. Perfect for product photography, portraits, or creative compositions.",
     buttonText: "Change Backgrounds",
     badgeText: "Background AI",
-    imageLeft: "https://images.unsplash.com/photo-1603344797033-f0f4f587ab60",
-    imageRight: "https://images.unsplash.com/photo-1501426026826-31c667bdf23d",
+    imageLeft: "./photo5.jpeg",
+    imageRight: "./photo6.jpeg",
     altLeft: "Subject with original background",
     altRight: "Subject with replaced background",
     promptText: "Replace background",
@@ -61,8 +61,8 @@ const generativeSections = [
       "Extend your canvas beyond its original borders. Our AI understands what should exist outside the frame and creates seamless extensions of your image.",
     buttonText: "Expand Your Images",
     badgeText: "AI Expansion",
-    imageLeft: "https://images.unsplash.com/photo-1505968409348-bd000797c92e",
-    imageRight: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    imageLeft: "./photo7.jpeg",
+    imageRight: "./photo8.jpeg",
     altLeft: "Original cropped landscape",
     altRight: "Extended landscape image",
     promptText: "Expand image",
@@ -72,7 +72,7 @@ const generativeSections = [
 
 export default function BackgroundRemover() {
   return (
-    <main className="min-h-screen bg-[#0a0f20] text-white pb-5">
+    <main className="min-h-screen bg-[#0a0f20] text-white pb-12">
       <section className="container mx-auto px-4 py-20 text-center">
         <div className="mb-3">
           <span className="text-sm font-medium tracking-wider text-purple-400 uppercase">

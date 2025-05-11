@@ -12,6 +12,7 @@ interface GenerativeFillSectionProps {
   altRight: string;
   promptText: string;
   reverse?: boolean;
+  yellow?: boolean;
 }
 
 export default function GenerativeFillSection({
@@ -25,6 +26,7 @@ export default function GenerativeFillSection({
   altRight,
   promptText,
   reverse = false,
+  yellow = false,
 }: GenerativeFillSectionProps) {
   return (
     <section className="container mx-auto px-4 py-12 flex flex-col-reverse md:flex-row items-center gap-8">
@@ -62,7 +64,11 @@ export default function GenerativeFillSection({
       </div>
       <div className={`md:w-1/2 ${reverse ? "md:order-first" : ""}`}>
         <div className="mb-2">
-          <span className="text-xs font-medium tracking-wider text-[#5463bf] uppercase">
+          <span
+            className={`text-xs font-medium tracking-wider uppercase ${
+              yellow ? "text-yellow-400" : "text-[#5463bf]"
+            }`}
+          >
             {badgeText}
           </span>
         </div>
@@ -70,7 +76,11 @@ export default function GenerativeFillSection({
         <p className="text-sm text-gray-300 mb-6">{description}</p>
         <Link
           href="#"
-          className="inline-block bg-[#5463bf] hover:bg-[#5463bf] text-white font-medium py-2 px-6 rounded-full transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+          className={`inline-block font-medium py-2 px-6 rounded-full transition-all duration-300 ${
+            yellow
+              ? "bg-yellow-500 hover:bg-yellow-500 hover:shadow-[0_0_25px_rgba(234,179,8,0.5),0_0_40px_rgba(234,179,8,0.3)]"
+              : "bg-[#5463bf] hover:bg-[#5463bf] hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+          } text-white`}
         >
           {buttonText}
         </Link>
