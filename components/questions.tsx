@@ -63,7 +63,7 @@ const questionsData = [
 export default function Questions() {
   return (
     <div
-      className="w-full py-20"
+      className="w-full min-h-screen py-20 flex items-center"
       style={{
         backgroundColor: "rgb(10, 15, 32)",
         backgroundImage:

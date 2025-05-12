@@ -1,11 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 const PhotoEditing = () => {
   return (
     <div
-      className="min-h-screen w-full h-full pb-12"
+      className="min-h-screen w-full h-full pb-12 py-16 flex flex-col justify-center"
       style={{
         backgroundColor: "#0a1920",
         backgroundImage: `
@@ -14,7 +17,13 @@ const PhotoEditing = () => {
       `,
       }}
     >
-      <section className="container mx-auto px-4 py-20 text-center">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="container mx-auto px-4 py-20 text-center"
+      >
         <div className="mb-3">
           <span className="text-sm font-medium tracking-wider text-white bg-yellow-500 p-2 uppercase">
             Best in class
@@ -29,9 +38,15 @@ const PhotoEditing = () => {
           innovation in online capabilities remains unwavering, ensuring the
           delivery of excellent retouching, drawing, filter, and effect tools!
         </p>
-      </section>
+      </motion.section>
 
-      <section className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-8">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-8"
+      >
         <div className="md:w-1/2">
           <div className="mb-2">
             <span className="text-xs font-medium tracking-wider text-yellow-400 uppercase">
@@ -69,9 +84,15 @@ const PhotoEditing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="container mx-auto px-4 py-12 pb-24 flex flex-col-reverse md:flex-row items-center gap-8">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="container mx-auto px-4 py-12 pb-24 flex flex-col-reverse md:flex-row items-center gap-8"
+      >
         <div className="md:w-1/2 w-full flex justify-center">
           <div className="relative h-[400px] w-full max-w-[800px] group">
             <div className="absolute top-0 left-[5%] sm:left-[10%] w-[70%] sm:w-[65%] h-[70%] sm:h-[80%] md:h-[100%] rounded-2xl overflow-hidden bg-[#f8f3e9] transform z-10 transition-transform duration-300 ease-in-out group-hover:-translate-x-4 group-hover:-translate-y-4">
@@ -123,8 +144,14 @@ const PhotoEditing = () => {
             Try Generative Fill
           </Link>
         </div>
-      </section>
-      <section className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-8">
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-8"
+      >
         <div className="md:w-1/2">
           <div className="mb-2">
             <span className="text-xs font-medium tracking-wider text-yellow-400 uppercase">
@@ -172,7 +199,7 @@ const PhotoEditing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

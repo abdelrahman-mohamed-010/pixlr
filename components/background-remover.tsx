@@ -1,3 +1,5 @@
+"use client";
+
 import AIImageGeneratorSection from "./ai-image-generator-section";
 import GenerativeFillSection from "./generative-fill-section";
 
@@ -72,40 +74,45 @@ const generativeSections = [
 
 export default function BackgroundRemover() {
   return (
-    <main className="min-h-screen bg-[#0a0f20] text-white pb-12">
-      <section className="container mx-auto px-4 py-20 text-center">
-        <div className="mb-3">
-          <span className="text-sm font-medium tracking-wider text-purple-400 uppercase">
-            Limitless Artistry
-          </span>
+    <main className="bg-[#0a0f20] text-white">
+      <section className="min-h-screen flex flex-col justify-center py-20">
+        <div className="container mx-auto px-4 text-center">
+          <div className="mb-3">
+            <span className="text-sm font-medium tracking-wider text-purple-400 uppercase">
+              Limitless Artistry
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            GENERATIVE AI TOOLS
+          </h1>
+          <p className="max-w-3xl mx-auto text-sm text-gray-300">
+            Explore Pixel's suite of Powerful Generative Tools unleashing
+            limitless creative possibilities. Perfect for both beginners and
+            seasoned professionals, these tools redefine artistic expression
+            with intuitive AI technology, revolutionizing your creative process.
+          </p>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          GENERATIVE AI TOOLS
-        </h1>
-        <p className="max-w-3xl mx-auto text-sm text-gray-300">
-          Explore Pixel's suite of Powerful Generative Tools unleashing
-          limitless creative possibilities. Perfect for both beginners and
-          seasoned professionals, these tools redefine artistic expression with
-          intuitive AI technology, revolutionizing your creative process.
-        </p>
+
+        <div className="mt-12">
+          <AIImageGeneratorSection />
+        </div>
       </section>
 
-      <AIImageGeneratorSection />
-
       {generativeSections.map((section, index) => (
-        <GenerativeFillSection
-          key={index}
-          title={section.title}
-          description={section.description}
-          buttonText={section.buttonText}
-          badgeText={section.badgeText}
-          imageLeft={section.imageLeft}
-          imageRight={section.imageRight}
-          altLeft={section.altLeft}
-          altRight={section.altRight}
-          promptText={section.promptText}
-          reverse={section.reverse}
-        />
+        <section key={index} className="min-h-screen flex items-center py-16">
+          <GenerativeFillSection
+            title={section.title}
+            description={section.description}
+            buttonText={section.buttonText}
+            badgeText={section.badgeText}
+            imageLeft={section.imageLeft}
+            imageRight={section.imageRight}
+            altLeft={section.altLeft}
+            altRight={section.altRight}
+            promptText={section.promptText}
+            reverse={section.reverse}
+          />
+        </section>
       ))}
     </main>
   );

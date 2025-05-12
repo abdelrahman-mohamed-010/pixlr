@@ -2,6 +2,7 @@
 import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface TestimonialProps {
   rating: number;
@@ -207,7 +208,12 @@ const TestimonialSection = () => {
 
 const Faq = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen flex flex-col justify-center py-16"
       style={{
         backgroundColor: "rgb(10, 15, 32)",
         backgroundImage:
@@ -226,7 +232,7 @@ const Faq = () => {
       </section>
 
       <TestimonialSection />
-    </div>
+    </motion.div>
   );
 };
 

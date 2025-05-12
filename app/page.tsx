@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Hero from "@/components/hero";
 import Navigation from "@/components/navigation";
 import QuickLinks from "@/components/quick-links";
@@ -11,7 +14,11 @@ import Faq from "@/components/Faq";
 
 export default function Home() {
   return (
-    <div className="min-h-screen   text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="min-h-screen   text-white"
+    >
       <div className="bg-gradient-to-b from-[#0a1520] to-[#0d2237] relative overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/20 rounded-full blur-[160px] animate-pulse"></div>
@@ -20,14 +27,14 @@ export default function Home() {
         <Navigation />
         <Hero />
       </div>
-      <QuickLinks />
       <BackgroundRemover />
       <PhotoEditing />
       <MobileApp />
       <TestimonialSection />
+      <QuickLinks />
       <Questions />
       <Faq />
       <Footer />
-    </div>
+    </motion.div>
   );
 }

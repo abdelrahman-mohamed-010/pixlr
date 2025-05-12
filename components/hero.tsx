@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Upload } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <main className="h-[calc(100vh-80px)] flex flex-col items-center container mx-auto px-4 text-center relative pt-20">
-      <div className="space-y-8 max-w-4xl">
+    <main className="min-h-screen pt-24 flex flex-col items-center container mx-auto px-4 text-center relative">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="space-y-8 max-w-4xl"
+      >
         <h1 className="text-6xl md:text-8xl font-extrabold mb-4 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent">
           PHOTO EDITOR
         </h1>
@@ -45,7 +51,7 @@ export default function Hero() {
         <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full py-6 px-12 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.6),0_0_50px_rgba(168,85,247,0.4)]">
           START 7 DAY TRIAL
         </Button>
-      </div>
+      </motion.div>
     </main>
   );
 }

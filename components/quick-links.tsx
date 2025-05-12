@@ -17,7 +17,7 @@ import {
 export default function QuickLinks() {
   return (
     <div
-      className="flex-1 p-8"
+      className="min-h-screen flex items-center py-16"
       style={{ backgroundImage: "linear-gradient(120deg, #8750ad, #7785d9)" }}
     >
       <div className="container mx-auto px-8">

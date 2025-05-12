@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function AIImageGeneratorSection() {
   return (
-    <section className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+    >
       <div className="md:w-1/3">
         <div className="mb-2">
           <span className="text-xs font-medium tracking-wider text-blue-400 uppercase">
@@ -68,6 +75,6 @@ export default function AIImageGeneratorSection() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.div>
   );
 }
