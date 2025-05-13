@@ -28,12 +28,11 @@ export default function Home() {
         <Hero />
       </div>
       <BackgroundRemover />
-      <PhotoEditing />
-      <MobileApp />
-      <TestimonialSection />
       <QuickLinks />
-      <Questions />
+      <TestimonialSection />
       <Faq />
+      <MobileApp />
+      <Questions />
       <Footer />
     </motion.div>
   );

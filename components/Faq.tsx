@@ -25,32 +25,39 @@ const Testimonial = ({
   role,
 }: TestimonialProps) => {
   return (
-    <Card className="bg-opacity-10 bg-white border-0 rounded-3xl h-[220px]">
-      <CardHeader className="pb-2">
-        <div className="flex">
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              className={`w-5 h-5 ${
-                i < rating
-                  ? "fill-white text-white"
-                  : "fill-gray-600 text-gray-600"
-              }`}
-            />
-          ))}
-        </div>
-        <h3 className="text-lg font-semibold mt-2 text-white">{title}</h3>
-      </CardHeader>
-      <CardContent className="flex flex-col justify-between h-full">
-        <p className="text-sm text-gray-300 line-clamp-4 h-[80px]">
-          {truncateText(content)}
-        </p>
-        <div className="text-sm text-gray-400 italic mt-auto">
-          {author}
-          {role && `, ${role}`}
-        </div>
-      </CardContent>
-    </Card>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5 }}
+    >
+      <Card className="bg-opacity-10 bg-white border-0 rounded-3xl h-[220px]">
+        <CardHeader className="pb-2">
+          <div className="flex">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                className={`w-5 h-5 ${
+                  i < rating
+                    ? "fill-white text-white"
+                    : "fill-gray-600 text-gray-600"
+                }`}
+              />
+            ))}
+          </div>
+          <h3 className="text-lg font-semibold mt-2 text-white">{title}</h3>
+        </CardHeader>
+        <CardContent className="flex flex-col justify-between h-full">
+          <p className="text-sm text-gray-300 line-clamp-4 h-[80px]">
+            {truncateText(content)}
+          </p>
+          <div className="text-sm text-gray-400 italic mt-auto">
+            {author}
+            {role && `, ${role}`}
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 };
 
@@ -212,7 +219,7 @@ const Faq = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8 }}
       className="min-h-screen flex flex-col justify-center py-16"
       style={{
         backgroundColor: "rgb(10, 15, 32)",
@@ -221,14 +228,26 @@ const Faq = () => {
       }}
     >
       <section className="container mx-auto px-4 py-20 pb-6 justify-center text-center">
-        <div className="mb-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-3"
+        >
           <span className="text-sm font-medium tracking-wider text-white bg-yellow-500 p-2 uppercase">
             Loved by many!
           </span>
-        </div>
-        <h1 className="text-4xl md:text-5xl uppercase font-bold mb-4 text-white">
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-4xl md:text-5xl uppercase font-bold mb-4 text-white"
+        >
           Join millions of creators!
-        </h1>
+        </motion.h1>
       </section>
 
       <TestimonialSection />

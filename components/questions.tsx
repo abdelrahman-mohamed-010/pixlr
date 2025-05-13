@@ -1,11 +1,28 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const questionsData = [
   {
@@ -62,7 +79,11 @@ const questionsData = [
 
 export default function Questions() {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
       className="w-full min-h-screen py-20 flex items-center"
       style={{
         backgroundColor: "rgb(10, 15, 32)",
@@ -71,36 +92,61 @@ export default function Questions() {
       }}
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="mb-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-3"
+          >
             <span className="text-sm font-medium tracking-wider text-white bg-purple-500 p-2 uppercase rounded">
               FAQ
             </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white uppercase">
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold mb-4 text-white uppercase"
+          >
             Common Questions
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto"
+        >
           <Accordion type="single" collapsible className="w-full space-y-4">
             {questionsData.map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-white/5 rounded-lg border border-white/10 px-4"
-              >
-                <AccordionTrigger className="text-white hover:text-white/90 text-left">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-300">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <motion.div key={index} variants={itemVariants}>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="bg-white/5 rounded-lg border border-white/10 px-4"
+                >
+                  <AccordionTrigger className="text-white hover:text-white/90 text-left">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
