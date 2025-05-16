@@ -16,17 +16,6 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
 
-  // Advanced text animation variants with floating effect
-  const titleVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.3,
-      },
-    },
-  };
 
   const letterVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.9 },
@@ -148,7 +137,7 @@ export default function Hero() {
           animate={["visible", "floating"]}
           variants={titleContainerVariants}
         >
-          <span className="bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent inline-block">
+          <span className="bg-gradient-to-r max-sm:text-4xl from-purple-500 to-blue-400 bg-clip-text text-transparent inline-block">
             {titleLetters.map((letter, index) => (
               <motion.span
                 key={index}
@@ -165,7 +154,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-xl md:text-2xl mb-4 text-gray-300"
+          className="text-lg md:text-2xl mb-4 text-gray-300"
         >
           AI Image Generator and AI Video Generator
         </motion.h2>
@@ -174,7 +163,7 @@ export default function Hero() {
           variants={paragraphVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl mx-auto text-sm text-gray-300 mb-6"
+          className="max-w-3xl max-sm:text-xs mx-auto text-sm text-gray-300 mb-6"
         >
           Edit photos, generate images, and design freely with Pixlr's powerful
           AI tools – right in your browser, on mobile, or desktop. Try 100%
