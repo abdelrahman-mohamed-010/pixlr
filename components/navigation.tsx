@@ -10,7 +10,7 @@ export default function Navigation() {
           <span className="text-white bg-gradient-to-r from-[#3B82F6] to-[#A855F7] px-2 rounded-xl">
             Pic
           </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-[#8B5CF6] dark:from-white/70">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-[#8B5CF6] ">
             Edit.ai
             </span>
         </span>
