@@ -250,7 +250,7 @@ const Faq = () => {
           "radial-gradient(50% 100% at 50% -10%, rgba(120, 137, 223, 0.5), rgba(119, 138, 232, 0))",
       }}
     >
-      <section className="container mx-auto px-4 py-20 pb-6 justify-center text-center">
+      <section className="md:container mx-auto md:px-4 py-20 pb-6 justify-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

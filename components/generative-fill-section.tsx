@@ -73,7 +73,7 @@ export default function GenerativeFillSection({
             transition={{ duration: 0.5, delay: 0.4 }}
             className="absolute shadow-lg border-white/20 border-2 bottom-[5%] left-[10%] right-[20%] flex items-center justify-between bg-white/30 backdrop-blur-md px-2 py-2 rounded-full z-30"
           >
-            <span className="text-base text-white ml-3 max-sm:text-sm">{promptText}</span>
+            <span className="text-base text-white ml-3 max-sm:text-xs">{promptText}</span>
             <DownloadModal
               trigger={
                 <button className="bg-black text-white text-xs px-4 py-2 rounded-full hover:bg-purple-600 transition duration-300">
