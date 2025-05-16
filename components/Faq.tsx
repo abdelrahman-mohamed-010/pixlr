@@ -31,13 +31,13 @@ const Testimonial = ({
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="bg-opacity-10 bg-white border-0 rounded-3xl h-[220px]">
-        <CardHeader className="pb-2">
+      <Card className="bg-opacity-10 bg-white border-0 rounded-3xl h-[180px] sm:h-[220px]">
+        <CardHeader className="pb-2 p-4 sm:p-6">
           <div className="flex">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                className={`w-5 h-5 ${
+                className={`w-4 h-4 sm:w-5 sm:h-5 ${
                   i < rating
                     ? "fill-white text-white"
                     : "fill-gray-600 text-gray-600"
@@ -45,13 +45,15 @@ const Testimonial = ({
               />
             ))}
           </div>
-          <h3 className="text-lg font-semibold mt-2 text-white">{title}</h3>
+          <h3 className="text-base sm:text-lg font-semibold mt-1 sm:mt-2 text-white">
+            {title}
+          </h3>
         </CardHeader>
-        <CardContent className="flex flex-col justify-between h-full">
-          <p className="text-sm text-gray-300 line-clamp-4 h-[80px]">
-            {truncateText(content)}
+        <CardContent className="flex flex-col justify-between h-full p-4 sm:p-6 pt-0 sm:pt-0">
+          <p className="text-xs sm:text-sm text-gray-300 line-clamp-3 sm:line-clamp-4 h-[60px] sm:h-[80px]">
+            {truncateText(content, window.innerWidth < 640 ? 100 : 150)}
           </p>
-          <div className="text-sm text-gray-400 italic mt-auto">
+          <div className="text-xs sm:text-sm text-gray-400 italic mt-auto">
             {author}
             {role && `, ${role}`}
           </div>
@@ -187,8 +189,15 @@ const TestimonialSection = () => {
         }
 
         .testimonial-item {
-          flex: 0 0 350px;
-          margin-right: 20px;
+          flex: 0 0 280px;
+          margin-right: 16px;
+        }
+
+        @media (min-width: 640px) {
+          .testimonial-item {
+            flex: 0 0 350px;
+            margin-right: 20px;
+          }
         }
 
         @keyframes scroll {

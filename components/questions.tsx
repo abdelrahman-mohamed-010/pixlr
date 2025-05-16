@@ -84,7 +84,7 @@ export default function Questions() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="w-full min-h-screen py-20 flex items-center"
+      className="w-full min-h-screen py-10 md:py-20 flex items-center"
       style={{
         backgroundColor: "rgb(10, 15, 32)",
         backgroundImage:
@@ -106,7 +106,7 @@ export default function Questions() {
             transition={{ duration: 0.5 }}
             className="mb-3"
           >
-            <span className="text-sm font-medium tracking-wider text-white bg-purple-500 p-2 uppercase rounded">
+            <span className="text-sm font-medium tracking-wider text-white bg-purple-500 p-1.5 md:p-2 uppercase rounded">
               FAQ
             </span>
           </motion.div>
@@ -115,7 +115,7 @@ export default function Questions() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-5xl font-bold mb-4 text-white uppercase"
+            className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-white uppercase"
           >
             Common Questions
           </motion.h2>
@@ -126,19 +126,19 @@ export default function Questions() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
+          className="max-w-3xl mx-auto px-2 md:px-0"
         >
           <Accordion type="single" collapsible className="w-full space-y-4">
             {questionsData.map((item, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <AccordionItem
                   value={`item-${index}`}
-                  className="bg-white/5 rounded-lg border border-white/10 px-4"
+                  className="bg-white/5 rounded-lg border border-white/10 px-2 md:px-4"
                 >
-                  <AccordionTrigger className="text-white hover:text-white/90 text-left">
+                  <AccordionTrigger className="text-white hover:text-white/90 text-left text-sm md:text-base">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
+                  <AccordionContent className="text-gray-300 text-sm md:text-base">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

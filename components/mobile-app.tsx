@@ -17,13 +17,13 @@ export default function MobileApp() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/20 rounded-full blur-[160px] animate-pulse"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/15 rounded-full blur-[160px] animate-pulse delay-700"></div>
       </div>
-      <div className="container mx-auto px-4 relative flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+      <div className="container mx-auto px-4 py-12 sm:py-0 relative flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative w-full lg:w-1/2 h-[600px]"
+          className="relative w-full lg:w-1/2 h-[500px] sm:h-[600px]"
         >
           <div className="absolute left-1/2 transform -translate-x-1/2 z-30 w-full h-full">
             <div className="relative w-full h-full">
@@ -42,14 +42,14 @@ export default function MobileApp() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-full lg:w-1/2 text-center lg:text-left z-10"
+          className="w-full lg:w-1/2 text-center lg:text-left z-10 px-4 sm:px-4"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-4xl line-clamp-3 md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent"
           >
             Capturing photos has never been more effortless
           </motion.h2>
@@ -58,7 +58,7 @@ export default function MobileApp() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-lg md:text-xl text-gray-300 mb-8"
+            className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8"
           >
             Pixlr mobile app is accessible on both iOS and Android, enabling you
             to generate impeccable AI photos on the fly, no matter where you are
@@ -70,18 +70,20 @@ export default function MobileApp() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto justify-center lg:justify-start"
           >
             <a
               href="https://apps.apple.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full py-3 px-8 flex items-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+              className="w-full sm:w-auto border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full py-3 px-6 sm:px-8 flex items-center justify-center sm:justify-start gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
             >
-              <FaApple className="w-9 h-9 -translate-y-1" />
+              <FaApple className="w-8 h-8 sm:w-9 sm:h-9 -translate-y-[2px]" />
               <div className="flex flex-col text-left">
-                <span className="text-xs">Download on the</span>
-                <span className="text-lg font-semibold">App Store</span>
+                <span className="text-[10px] sm:text-xs">Download on the</span>
+                <span className="text-base sm:text-lg font-semibold">
+                  App Store
+                </span>
               </div>
             </a>
 
@@ -89,12 +91,12 @@ export default function MobileApp() {
               href="https://play.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full px-8 flex items-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+              className="w-full sm:w-auto border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full py-3 px-6 sm:px-8 flex items-center justify-center sm:justify-start gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 48 48"
-                className="w-9 h-9"
+                className="w-8 h-8 sm:w-9 sm:h-9"
               >
                 <linearGradient
                   id="AraffhWwwEqZfgFEBZFoqa_L1ws9zn2uD01_gr1"
@@ -162,8 +164,10 @@ export default function MobileApp() {
                 ></path>
               </svg>
               <div className="flex flex-col text-left">
-                <span className="text-xs">Get it on</span>
-                <span className="text-lg font-semibold">Google Play</span>
+                <span className="text-[10px] sm:text-xs">Get it on</span>
+                <span className="text-base sm:text-lg font-semibold">
+                  Google Play
+                </span>
               </div>
             </a>
           </motion.div>
