@@ -52,12 +52,12 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 lg:gap-16"
+          className="flex flex-col sm:flex-row justify-between"
         >
           {/* Logo and Description */}
           <motion.div
             variants={itemVariants}
-            className="col-span-2 md:col-span-3 lg:col-span-1"
+            className="w-full sm:w-fit sm:mr-8"
           >
             <Link href="/" className="inline-block mb-6">
               <span className="text-2xl font-bold text-white">
@@ -73,16 +73,16 @@ export default function Footer() {
           {/* Links Sections */}
           <motion.div
             variants={containerVariants}
-            className="col-span-2 md:col-span-3 lg:col-span-3 grid grid-cols-3 gap-8 justify-between"
+            className="flex flex-col sm:flex-row justify-between w-full"
           >
             {Object.entries(footerLinks).map(([title, links]) => (
               <motion.div
                 key={title}
                 variants={itemVariants}
-                className="space-y-4"
+                className="flex-1 space-y-4 sm:mr-8 last:mr-0 flex flex-col items-center"
               >
-                <h3 className="text-white font-semibold">{title}</h3>
                 <ul className="space-y-2">
+                  <li className="text-white font-semibold">{title}</li>
                   {links.map((link) => (
                     <li key={link}>
                       <Link

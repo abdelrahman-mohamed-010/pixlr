@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -74,15 +75,15 @@ export default function Hero() {
   };
 
   // Split title into individual letters for animation
-  const titleText = "PHOTO EDITOR";
+  const titleText = "AI PHOTO EDITOR";
   const titleLetters = titleText.split("");
 
   return (
     <main
       ref={ref}
-      className="min-h-screen pt-24 flex flex-col items-center container mx-auto px-4 text-center relative"
+      className="min-h-screen pt-24 flex flex-col items-center container mx-auto text-center relative"
     >
-      <motion.div style={{ y, opacity, scale }} className="space-y-8 max-w-4xl">
+      <motion.div style={{ y, opacity, scale }} className="space-y-8 ">
         <motion.div
           className="mb-6 "
           initial={{ opacity: 0, y: -20 }}
@@ -90,57 +91,57 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <div className="flex items-center justify-center gap-0">
-            <svg
-              className="w-12 h-6 text-purple-500 transform scale-x-[-1]"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 8C18.4 8.8 17.1 10.3 16.2 11.6C15.3 12.9 14.8 14.2 14.5 15.5C14.2 16.8 14.1 18.1 14.2 19.4C13.5 18.9 12.8 18.4 12 18.1C11.2 17.8 10.4 17.6 9.5 17.6C8.6 17.6 7.7 17.7 6.8 18.1C5.9 18.5 5 19.1 4 20C4.3 18.7 4.8 17.4 5.5 16.2C6.2 15 7.1 13.9 8.2 13C9.3 12.1 10.6 11.4 12 11C13.4 10.6 14.9 10.5 16.5 10.7C15.1 9.9 13.5 9.3 11.9 9C10.3 8.7 8.6 8.7 7 9C7.9 8.2 8.9 7.5 10 7C11.1 6.5 12.3 6.2 13.5 6.1C14.7 6 16 6.1 17.2 6.5C18.4 6.9 19.4 7.5 20 8Z"
-                fill="currentColor"
-              />
-            </svg>
-            <span className="text-sm tracking-widest text-gray-400 font-medium">
-              CREATIVE STUDIO
-            </span>
-            <svg
-              className="w-12 h-6 text-purple-500"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 8C18.4 8.8 17.1 10.3 16.2 11.6C15.3 12.9 14.8 14.2 14.5 15.5C14.2 16.8 14.1 18.1 14.2 19.4C13.5 18.9 12.8 18.4 12 18.1C11.2 17.8 10.4 17.6 9.5 17.6C8.6 17.6 7.7 17.7 6.8 18.1C5.9 18.5 5 19.1 4 20C4.3 18.7 4.8 17.4 5.5 16.2C6.2 15 7.1 13.9 8.2 13C9.3 12.1 10.6 11.4 12 11C13.4 10.6 14.9 10.5 16.5 10.7C15.1 9.9 13.5 9.3 11.9 9C10.3 8.7 8.6 8.7 7 9C7.9 8.2 8.9 7.5 10 7C11.1 6.5 12.3 6.2 13.5 6.1C14.7 6 16 6.1 17.2 6.5C18.4 6.9 19.4 7.5 20 8Z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
+            <Image
+              src="/laurel.png"
+              alt="Laurel decoration left"
+              width={40}
+              height={40}
+              className="transform scale-x-[-1] -translate-y-2 -mr-1"
+            />
 
-          <motion.div
-            className="flex justify-center gap-1 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            {[...Array(5)].map((_, i) => (
-              <motion.span
-                key={i}
-                className="text-yellow-400 text-sm"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 400,
-                  delay: 0.7 + i * 0.1,
-                }}
+            <div className="flex flex-col items-center">
+              <div className="flex flex-col">
+                <span className="block text-white font-bold text-2xl tracking-tighter">
+                  TALK FREELY
+                </span>
+                <span className="text-sm -mt-0.5 block text-white font-base">
+                  WITH REAL PEOPLE
+                </span>
+              </div>
+
+              <motion.div
+                className="flex justify-center gap-1 mb-4 mt-1"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
               >
-                ★
-              </motion.span>
-            ))}
-          </motion.div>
-        </motion.div>
+                {[...Array(5)].map((_, i) => (
+                  <motion.span
+                    key={i}
+                    className="text-yellow-400 text-sm"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      delay: 0.7 + i * 0.1,
+                    }}
+                  >
+                    ★
+                  </motion.span>
+                ))}
+              </motion.div>
+            </div>
 
+            <Image
+              src="/laurel.png"
+              alt="Laurel decoration right"
+              width={40}
+              height={40}
+              className="-ml-1 -translate-y-2 "
+            />
+          </div>
+        </motion.div>
         <motion.div
           className="text-6xl md:text-8xl font-extrabold mb-4"
           initial="hidden"
@@ -201,7 +202,7 @@ export default function Hero() {
 
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-40 left-20 w-20 h-20 rounded-full bg-purple-500/10 z-0"
+        className="absolute top-20 left-10 w-24 h-24 rounded-full bg-purple-500/10 z-0"
         animate={{
           y: [0, 30, 0],
           opacity: [0.5, 0.8, 0.5],
@@ -214,13 +215,26 @@ export default function Hero() {
       />
 
       <motion.div
-        className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-blue-500/10 z-0"
+        className="absolute top-60 right-10 w-32 h-32 rounded-full bg-blue-500/10 z-0"
         animate={{
           y: [0, -40, 0],
           opacity: [0.3, 0.6, 0.3],
         }}
         transition={{
           duration: 10,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+      />
+
+      <motion.div
+        className="absolute bottom-20 left-1/4 w-28 h-28 rounded-full bg-cyan-500/10 z-0"
+        animate={{
+          y: [0, 25, 0],
+          opacity: [0.4, 0.7, 0.4],
+        }}
+        transition={{
+          duration: 9,
           repeat: Infinity,
           repeatType: "reverse",
         }}

@@ -7,12 +7,12 @@ export default function Navigation() {
     <header className="container mx-auto px-8 py-6 flex items-center justify-between relative">
       <Link href="/" className="flex items-center">
         <span className="text-3xl font-bold">
-          <span className="text-white bg-gradient-to-r from-purple-700 to-purple-500 px-2 mr-2 rounded-xl">
+          <span className="text-white bg-gradient-to-r from-[#3B82F6] to-[#A855F7] px-2 rounded-xl">
             Pic
           </span>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-purple-500">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-[#8B5CF6] dark:from-white/70">
             Edit.ai
-          </span>
+            </span>
         </span>
       </Link>
 

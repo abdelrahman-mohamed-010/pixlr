@@ -27,13 +27,14 @@ export default function AIImageGeneratorSection() {
           visually captivating artwork. Unleash your imagination and craft
           breathtaking, AI-generated masterpieces that are bound to captivate
           and inspire your audience.
-        </p>
-        <Link
-          href="#"
-          className="inline-block bg-[#5463bf] hover:bg-[#5463bf] text-white font-medium py-2 px-6 rounded-full transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
-        >
-          Test Image Generator
-        </Link>
+        </p>{" "}
+        <DownloadModal
+          trigger={
+            <button className="inline-block bg-[#5463bf] hover:bg-[#5463bf] text-white font-medium py-2 px-6 rounded-full transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]">
+              Test Image Generator
+            </button>
+          }
+        />
       </div>
       <div className="md:w-2/3 w-full flex justify-center">
         <div className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full group">

@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FaApple, FaGooglePlay } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+import { FaApple } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function MobileApp() {
@@ -73,39 +72,100 @@ export default function MobileApp() {
             transition={{ duration: 0.6, delay: 1 }}
             className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
           >
-            <Button
-              asChild
-              className="border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full py-8 px-8 flex items-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+            <a
+              href="https://apps.apple.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full py-3 px-8 flex items-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
             >
-              <a
-                href="https://apps.apple.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaApple className="w-9 h-9" />
-                <div className="flex flex-col text-left">
-                  <span className="text-xs">Download on the</span>
-                  <span className="text-lg font-semibold">App Store</span>
-                </div>
-              </a>
-            </Button>
+              <FaApple className="w-9 h-9 -translate-y-1" />
+              <div className="flex flex-col text-left">
+                <span className="text-xs">Download on the</span>
+                <span className="text-lg font-semibold">App Store</span>
+              </div>
+            </a>
 
-            <Button
-              asChild
-              className="border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full py-8 px-8 flex items-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+            <a
+              href="https://play.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-purple-500 bg-black/90 hover:bg-purple-900/20 text-white rounded-full px-8 flex items-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
             >
-              <a
-                href="https://play.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                className="w-9 h-9"
               >
-                <FaGooglePlay className="w-9 h-9" />
-                <div className="flex flex-col text-left">
-                  <span className="text-xs">Get it on</span>
-                  <span className="text-lg font-semibold">Google Play</span>
-                </div>
-              </a>
-            </Button>
+                <linearGradient
+                  id="AraffhWwwEqZfgFEBZFoqa_L1ws9zn2uD01_gr1"
+                  x1="18.102"
+                  x2="25.297"
+                  y1="3.244"
+                  y2="34.74"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stopColor="#35ab4a"></stop>
+                  <stop offset=".297" stopColor="#31a145"></stop>
+                  <stop offset=".798" stopColor="#288739"></stop>
+                  <stop offset="1" stopColor="#237a33"></stop>
+                </linearGradient>
+                <path
+                  fill="url(#AraffhWwwEqZfgFEBZFoqa_L1ws9zn2uD01_gr1)"
+                  d="M13.488,4.012C10.794,2.508,7.605,3.778,6.45,6.323L24.126,24l9.014-9.014L13.488,4.012z"
+                ></path>
+                <linearGradient
+                  id="AraffhWwwEqZfgFEBZFoqb_L1ws9zn2uD01_gr2"
+                  x1="19.158"
+                  x2="21.194"
+                  y1="23.862"
+                  y2="66.931"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stopColor="#f14e5d"></stop>
+                  <stop offset=".499" stopColor="#ea3d4f"></stop>
+                  <stop offset="1" stopColor="#e12138"></stop>
+                </linearGradient>
+                <path
+                  fill="url(#AraffhWwwEqZfgFEBZFoqb_L1ws9zn2uD01_gr2)"
+                  d="M33.14,33.014L24.126,24L6.45,41.677 c1.156,2.546,4.345,3.815,7.038,2.312L33.14,33.014z"
+                ></path>
+                <linearGradient
+                  id="AraffhWwwEqZfgFEBZFoqc_L1ws9zn2uD01_gr3"
+                  x1="32.943"
+                  x2="36.541"
+                  y1="14.899"
+                  y2="43.612"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stopColor="#ffd844"></stop>
+                  <stop offset=".519" stopColor="#ffc63f"></stop>
+                  <stop offset="1" stopColor="#ffb03a"></stop>
+                </linearGradient>
+                <path
+                  fill="url(#AraffhWwwEqZfgFEBZFoqc_L1ws9zn2uD01_gr3)"
+                  d="M41.419,28.393 c1.72-0.96,2.58-2.676,2.581-4.393c-0.001-1.717-0.861-3.434-2.581-4.393l-8.279-4.621L24.126,24l9.014,9.014L41.419,28.393z"
+                ></path>
+                <linearGradient
+                  id="AraffhWwwEqZfgFEBZFoqd_L1ws9zn2uD01_gr4"
+                  x1="13.853"
+                  x2="15.572"
+                  y1="5.901"
+                  y2="42.811"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset=".003" stopColor="#0090e6"></stop>
+                  <stop offset="1" stopColor="#0065a0"></stop>
+                </linearGradient>
+                <path
+                  fill="url(#AraffhWwwEqZfgFEBZFoqd_L1ws9zn2uD01_gr4)"
+                  d="M6.45,6.323C6.168,6.948,6,7.652,6,8.408 v31.179c0,0.761,0.164,1.463,0.45,2.09l17.674-17.68L6.45,6.323z"
+                ></path>
+              </svg>
+              <div className="flex flex-col text-left">
+                <span className="text-xs">Get it on</span>
+                <span className="text-lg font-semibold">Google Play</span>
+              </div>
+            </a>
           </motion.div>
         </motion.div>
       </div>

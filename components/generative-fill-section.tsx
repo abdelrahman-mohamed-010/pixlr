@@ -118,7 +118,7 @@ export default function GenerativeFillSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-sm text-gray-300 mb-6"
+          className="text-sm text-gray-300 mb-6 w-[80%]"
         >
           {description}
         </motion.p>
@@ -128,16 +128,20 @@ export default function GenerativeFillSection({
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Link
-            href="#"
-            className={`inline-block font-medium py-2 px-6 rounded-full transition-all duration-300 ${
-              yellow
-                ? "bg-yellow-500 hover:bg-yellow-500 hover:shadow-[0_0_25px_rgba(234,179,8,0.5),0_0_40px_rgba(234,179,8,0.3)]"
-                : "bg-[#5463bf] hover:bg-[#5463bf] hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
-            } text-white`}
-          >
-            {buttonText}
-          </Link>
+          {" "}
+          <DownloadModal
+            trigger={
+              <button
+                className={`inline-block font-medium py-2 px-6 rounded-full transition-all duration-300 ${
+                  yellow
+                    ? "bg-yellow-500 hover:bg-yellow-500 hover:shadow-[0_0_25px_rgba(234,179,8,0.5),0_0_40px_rgba(234,179,8,0.3)]"
+                    : "bg-[#5463bf] hover:bg-[#5463bf] hover:shadow-[0_0_25px_rgba(168,85,247,0.5),0_0_40px_rgba(147,51,234,0.3)]"
+                } text-white`}
+              >
+                {buttonText}
+              </button>
+            }
+          />
         </motion.div>
       </motion.div>
     </motion.section>
