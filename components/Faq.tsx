@@ -1,7 +1,7 @@
 "use client";
 import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface TestimonialProps {
@@ -24,6 +24,20 @@ const Testimonial = ({
   author,
   role,
 }: TestimonialProps) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Only access window in useEffect (client-side)
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -51,7 +65,7 @@ const Testimonial = ({
         </CardHeader>
         <CardContent className="flex flex-col justify-between h-full p-4 sm:p-6 pt-0 sm:pt-0">
           <p className="text-xs sm:text-sm text-gray-300 line-clamp-3 sm:line-clamp-4 h-[60px] sm:h-[80px]">
-            {truncateText(content, window.innerWidth < 640 ? 100 : 150)}
+            {truncateText(content, isMobile ? 100 : 150)}
           </p>
           <div className="text-xs sm:text-sm text-gray-400 italic mt-auto">
             {author}
