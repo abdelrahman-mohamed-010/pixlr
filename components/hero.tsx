@@ -16,7 +16,6 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
 
-
   const letterVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.9 },
     visible: {
@@ -91,10 +90,10 @@ export default function Hero() {
             <div className="flex flex-col items-center">
               <div className="flex flex-col">
                 <span className="block text-white font-bold text-2xl tracking-tighter">
-                  TALK FREELY
+                  ONE MILLION +
                 </span>
                 <span className="text-sm -mt-0.5 block text-white font-base">
-                  WITH REAL PEOPLE
+                  PHOTOS EDITED
                 </span>
               </div>
 
